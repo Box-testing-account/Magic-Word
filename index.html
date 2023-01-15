@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Video Website</title>
+    <meta name="viewport" content="width=device-width">
   </head>
   <body>
-    <h1>Welcome to My Video Website</h1>
-    <p>Here is a video for you to watch:</p>
-    <video controls autoplay name="magicword">
+    <video controls autoplay name="media">
       <source src="https://box-testing-account.github.io/Magic-Word/magicword.mp4" type="video/mp4">
     </video>
     <script>
-      const magicword = document.getElementById("magicword");
-      magicword.onended = function() {
-        magicword.play();
+      const media = document.getElementById("media");
+      media.onended = function() {
+        media.play();
       };
-      window.addEventListener("resize", function(){
-          var aspect = magicword.videoWidth / magicword.videoHeight;
-          var newWidth = window.innerWidth;
-          magicword.style.width = newWidth + "px";
-          magicword.style.height = newWidth / aspect + "px";
-      });
+//      window.addEventListener("resize", function(){
+//          var aspect = magicword.videoWidth / magicword.videoHeight;
+//          var newWidth = window.innerWidth;
+//          magicword.style.width = newWidth + "px";
+//          magicword.style.height = newWidth / aspect + "px";
+//      });
     </script>
   </body>
 </html>
