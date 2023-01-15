@@ -35,6 +35,9 @@
       myVideo.onended = function() {
         myVideo.play();
       };
+      window.onload = function() {
+        document.getElementById("myAudio").play();
+      };
       window.addEventListener("resize", function(){
         var aspect = myVideo.videoWidth / myVideo.videoHeight;
         var newWidth = window.innerWidth;
