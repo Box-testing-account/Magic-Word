@@ -6,21 +6,22 @@
   <body>
     <h1>Welcome to My Video Website</h1>
     <p>Here is a video for you to watch:</p>
-    <video id="myVideo" autoplay loop>
+    <video id="magicword" loop>
       <source src="magicword.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <script>
-      const myVideo = document.getElementById("myVideo");
-      myVideo.onended = function() {
-        myVideo.play();
+      const magicword = document.getElementById("magicword");
+      magicword.onended = function() {
+        magicword.play();
       };
       window.addEventListener("resize", function(){
-          var aspect = myVideo.videoWidth / myVideo.videoHeight;
+          var aspect = magicword.videoWidth / magicword.videoHeight;
           var newWidth = window.innerWidth;
-          myVideo.style.width = newWidth + "px";
-          myVideo.style.height = newWidth / aspect + "px";
+          magicword.style.width = newWidth + "px";
+          magicword.style.height = newWidth / aspect + "px";
       });
+      magicword.play();
     </script>
   </body>
 </html>
