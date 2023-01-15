@@ -15,6 +15,13 @@
       myVideo.onended = function() {
         myVideo.play();
       };
+      const myVideo = document.getElementById("myVideo");
+      window.addEventListener("resize", function(){
+          var aspect = myVideo.videoWidth / myVideo.videoHeight;
+          var newWidth = window.innerWidth;
+          myVideo.style.width = newWidth + "px";
+          myVideo.style.height = newWidth / aspect + "px";
+      });
     </script>
   </body>
 </html>
