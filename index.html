@@ -2,49 +2,27 @@
 <html>
   <head>
     <title>My Video Website</title>
-    <style>
-      #myVideo {
-        width: 100%;
-        height: auto;
-      }
-      /* Hide the video controls */
-      #myVideo::-webkit-media-controls {
-        display:none !important;
-      }
-      #myVideo::-moz-media-controls {
-        display:none !important;
-      }
-      #myVideo::-ms-media-controls {
-        display:none !important;
-      }
-    </style>
   </head>
   <body>
     <h1>Welcome to My Video Website</h1>
     <p>Here is a video for you to watch:</p>
-    <video id="myVideo" loop muted autoplay>
+    <video id="myVideo" loop>
       <source src="magicword.mp4" type="video/mp4">
+      <source src="myvideo.ogg" type="video/ogg">
       Your browser does not support the video tag.
     </video>
-    <audio id="myAudio" autoplay loop>
-      <source src="spencer.mp3" type="audio/mp3">
-      Your browser does not support the audio tag.
-    </audio>
     <script>
       const myVideo = document.getElementById("myVideo");
-      myVideo.onended = function() {
-        myVideo.play();
-      };
-      window.onload = function() {
-        document.getElementById("myAudio").play();
-      };
-      window.addEventListener("resize", function(){
-        var aspect = myVideo.videoWidth / myVideo.videoHeight;
-        var newWidth = window.innerWidth;
-        myVideo.style.width = newWidth + "px";
-        myVideo.style.height = newWidth / aspect + "px";
-      });
+      let playPromise = myVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+          // Automatic playback started!
+        })
+        .catch(error => {
+          // Automatic playback failed.
+          // Show a UI element to let the user manually start playback.
+        });
+      }
     </script>
   </body>
 </html>
-
