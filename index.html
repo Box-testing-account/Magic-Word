@@ -6,7 +6,7 @@
   <body>
     <h1>Welcome to My Video Website</h1>
     <p>Here is a video for you to watch:</p>
-    <video id="myVideo" width="320" height="240" controls>
+    <video id="myVideo" controls>
       <source src="magicword.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -15,7 +15,6 @@
       myVideo.onended = function() {
         myVideo.play();
       };
-      const myVideo = document.getElementById("myVideo");
       window.addEventListener("resize", function(){
           var aspect = myVideo.videoWidth / myVideo.videoHeight;
           var newWidth = window.innerWidth;
