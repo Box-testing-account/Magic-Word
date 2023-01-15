@@ -4,25 +4,8 @@
     <title>My Video Website</title>
   </head>
   <body>
-    <h1>Welcome to My Video Website</h1>
-    <p>Here is a video for you to watch:</p>
     <video id="myVideo" loop>
       <source src="magicword.mp4" type="video/mp4">
-      <source src="myvideo.ogg" type="video/ogg">
-      Your browser does not support the video tag.
     </video>
-    <script>
-      const myVideo = document.getElementById("myVideo");
-      let playPromise = myVideo.play();
-      if (playPromise !== undefined) {
-        playPromise.then(_ => {
-          // Automatic playback started!
-        })
-        .catch(error => {
-          // Automatic playback failed.
-          // Show a UI element to let the user manually start playback.
-        });
-      }
-    </script>
   </body>
 </html>
