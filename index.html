@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Video Website</title>
+    <title>Video Player</title>
+    <style>
+      /* Add some styling to the video element */
+      #video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+      }
+      /* Remove the scrollbar */
+      body {
+        overflow: hidden;
+      }
+    </style>
   </head>
   <body>
-    <video id="myVideo" height="100%" loop muted autoplay>
+    <video id="video" width="100vw" height="100vh" loop muted autoplay>
       <source src="magicword.mp4" type="video/mp4">
+      Your browser does not support the video tag.
     </video>
   </body>
 </html>
