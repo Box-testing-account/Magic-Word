@@ -21,5 +21,17 @@
     <video id="video" loop muted autoplay>
       <source src="magicword.mp4" type="video/mp4">
     </video>
+    <script>
+      const video = document.getElementById("video");
+      setInterval(() => {
+        if (localStorage.getItem("video") === "true") {
+          video.play
+        } else {
+          video.pause
+        };
+      }, 100);
+
+      video.play();
+    </script>
   </body>
 </html>
