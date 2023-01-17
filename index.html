@@ -25,7 +25,7 @@
       const video = document.getElementById("video");
       setInterval(() => {
         if (localStorage.getItem("video") === "true") {
-          video.unpause();
+          video.play();
         } else {
           video.pause();
         };
